@@ -5,7 +5,12 @@ var efeitoInterval;
                     // Efeito de Verão
 ///////////////////////////////////////////////////////////////////
 function createSummer() {
-    let summer = document.querySelector('.container')
+    let container = document.querySelector('.container')
+    let summer = document.createElement('img');
+    summer.classList.add('verao');
+    summer.src = './imagem/verao.png'
+    
+    container.appendChild(summer);
 }
 
 ///////////////////////////////////////////////////////////////////
@@ -66,7 +71,7 @@ function ativarEfeitoDaEstacao(nomeEstacao) {
     } else if (nomeEstacao === 'Outono') {
         efeitoInterval = setInterval(createFallingLeaf , 300);
     } else if (nomeEstacao === 'Verão') {
-        ativarEfeitoSol();
+        createSummer();
     }
 }
 
@@ -76,9 +81,9 @@ function ativarEfeitoDaEstacao(nomeEstacao) {
 function verificarEstacao() {
     let mes = new Date();
     let numMes = mes.getMonth();
-    let nomeEstacao = '';
+    let nomeEstacao = 'Verão';
 
-    switch(numMes){
+   /* switch(numMes){
 
         case 11: case 0: case 1:
             nomeEstacao = 'Verão';
@@ -99,7 +104,7 @@ function verificarEstacao() {
         default:
             nomeEstacao = 'Estação inválida!'
              break
-    }
+    }*/
     document.getElementById('estacao').innerHTML = `<h3>Estação atual: ${nomeEstacao}</h3>`
     ativarEfeitoDaEstacao(nomeEstacao)
 }
