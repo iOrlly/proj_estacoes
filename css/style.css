@@ -1,0 +1,98 @@
+:root {
+    --cor-principal: #000000;
+    --cor-secundaria: #00c89679; 
+    --cor-texto-claro: #F0F0F0; 
+    --cor-texto-escuro: #333333; 
+    --cor-borda: #1a1a1a; 
+    --cor-card-fundo: #1111113d;
+}
+
+body {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-claro);
+    overflow: hidden; /*Para o efeito neve não passar do limite da tela*/
+}
+
+h2 {
+    color: var(--cor-texto-claro);
+    text-align: center;
+    margin-top: 50px;
+}
+
+div#estacao {
+    background-color: var(--cor-card-fundo);
+    border: 3px solid var(--cor-secundaria);
+    padding: 20px;
+    margin: 20px auto;
+    height: 100px; /*Mantém fixo o tamanho da div estacao*/
+    width: 80%;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+input[type="button"], label{
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin: auto;
+    display: block;
+}
+
+input[type="button"] {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    cursor: pointer;
+}
+
+/*Efeito primavera*/
+.primavera {
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/*Efeito de Inverno*/
+span {
+    position: absolute;
+    top: -50px;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    filter: blur(3px);
+    animation: snowFall 5s linear infinite;
+    background-color: white;
+}
+
+/*Efeito de outono*/
+.leaves {
+    position: absolute;
+    top: -50px;
+    filter: blur(1px);
+    animation: fallingLeaf 7s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes snowFall {
+    100% {
+        transform: translateY(105vh) scale(.4);
+    }
+}
+
+@keyframes fallingLeaf{
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(50vh) rotate(180deg);
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg);
+    }
+}
