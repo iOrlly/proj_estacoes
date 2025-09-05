@@ -81,9 +81,9 @@ function ativarEfeitoDaEstacao(nomeEstacao) {
 function verificarEstacao() {
     let mes = new Date();
     let numMes = mes.getMonth();
-    let nomeEstacao = 'Verão';
+    let nomeEstacao = '';
 
-   /* switch(numMes){
+   switch(numMes){
 
         case 11: case 0: case 1:
             nomeEstacao = 'Verão';
@@ -104,7 +104,7 @@ function verificarEstacao() {
         default:
             nomeEstacao = 'Estação inválida!'
              break
-    }*/
+    }
     document.getElementById('estacao').innerHTML = `<h3>Estação atual: ${nomeEstacao}</h3>`
     ativarEfeitoDaEstacao(nomeEstacao)
 }
